@@ -16,3 +16,8 @@ else:
     print('Нет, тебе не повезло')
 
 
+# спионеренное с просторов интернета, для себя
+
+# n = input().strip()
+# print(['NO', 'YES'][sum(list(map(int, n[:3])))==sum(list(map(int, n[3:])))])
+
