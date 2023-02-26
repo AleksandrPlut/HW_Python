@@ -6,10 +6,7 @@
 # 3 2 1 -> no
 
 n, m, k = list(map(int, input('Введите необходимые параметры через пробел: ').split()))
-if k < n * m:
-    if k % n == 0 or k % m == 0:
-        print('Yes')
-    else:
-        print('No')
+if k < n * m and k % n == 0 or k % m == 0:
+    print('Yes')
 else:
     print('No')
