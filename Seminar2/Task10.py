@@ -5,22 +5,45 @@
 # 5 -> 1 0 1 1 0
 # 2
 
-import random
-my_list = []
-eagle = 0
-tails = 0
-for i in range(5):
-    t = random.randrange(0, 2)
-    my_list.append(t)
-    if t == 0:
-        eagle += 1
-    else:
-        tails += 1
-print(my_list)
-print(eagle, 'монеты лежит орлом вверх')
-print(tails, 'монеты лежит решком вверх')
-if eagle > tails:
-    print(f'Необходимо перевернуть {tails} монет')
+# import random
+# my_list = []
+# eagle = 0
+# tails = 0
+# for i in range(5):
+#     t = random.randrange(0, 2)
+#     my_list.append(t)
+#     if t == 0:
+#         eagle += 1
+#     else:
+#         tails += 1
+# print(my_list)
+# print(eagle, 'монеты лежит орлом вверх')
+# print(tails, 'монеты лежит решком вверх')
+# if eagle > tails:
+#     print(f'Необходимо перевернуть {tails} монет')
 
-else:
-    print(f'Необходимо перевернуть {eagle} монет(ы)')
+# else:
+#     print(f'Необходимо перевернуть {eagle} монет(ы)')
+
+
+# решение с семинара (значительно компактней моего)
+
+# import random
+# n = int(input('Введите количество монет: '))
+# a = [random.randint(0, 1) for i in range(n)]
+# print(a)
+# if a.count(0) < a.count(1):    # метод ".count()" автоматически считает колличество
+#     print('Необходимо перевернуть', a.count(0), 'монет')
+# else:
+#     print('Необходимо перевернуть', a.count(1), 'монет')
+
+
+# решение с семинара (значительно компактней моего)
+
+from random import randint      # импортируем функцию "randint" для последующего ее применения в коде
+coins = [randint(0, 1) for _ in range(int(input('Введите количество монет: ')))] # читается с конца, вводим количество монет,
+# потом пробегаем по каждому индексу (количество монет), и рендомно заполняем их нулями или единицами
+print(coins)
+print(min(coins.count(0), coins.count(1))) # функция "min" находит минимальное количиство элементов
+
+
