@@ -10,9 +10,7 @@
 from random import randint
 mas = [randint(1, 5) for _ in range(int(input('Введите число цифр массива: ')))]
 print(mas)
-
 n = int(input('Введите искомое число в диапзоне от 1 до 5: '))
-#print(mas.count(f'Число {n} встречается в массиве'))
 print(f'Число {n} встречается в массиве {mas.count(n)} раз(а)')
 
 
