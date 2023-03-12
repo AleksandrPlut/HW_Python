@@ -10,27 +10,17 @@
 
 from random import randint
 
-# N = int(input('Введите количество элементов первой строки: '))
-# lst_1 = [randint(1, N) for _ in range(N)]
-# M = int(input('Введите количество элементов второй строки: '))
-# lst_2 = [randint(1, M) for _ in range(M)]
-# print(*lst_1)
-# print(*lst_2)
-# lst_3 = []
-# for i in lst_1:
-#     if i in lst_2:
-#         lst_3.append(i)
-# print(*set(lst_3))
-
-
 N = int(input('Введите количество элементов первой строки: '))
 lst_1 = [randint(1, N) for _ in range(N)]
 M = int(input('Введите количество элементов второй строки: '))
 lst_2 = [randint(1, M) for _ in range(M)]
-print(lst_1)
-print(lst_2)
+print(*lst_1)
+print(*lst_2)
 lst_3 = []
 for i in lst_1:
-    for j in lst_2:
-        if i == j:
-           print(i, end=' ')
+    if i in lst_2:
+        lst_3.append(i)
+print(*set(lst_3))
+
+# в 90% данный код выводит результат по возрастанию, но иногда выдает разносортицу, как это исправить я так и не догадался, 
+# при добавлении метода "sort()" и написании в виде "print(*set(lst_3.sort()))" выдает ошибку
