@@ -14,9 +14,14 @@ lst = [randint(1, N) for _ in range(N)]
 print(*lst)
 lst_2 = []
 
-for i in range(len(lst) - 1):
-    lst_2.append(lst[i-1] + lst[i] + lst[i+1])
-lst_2.append(lst[-2] + lst[-1] + lst[0])  # описываем частный случай, который не попадает в первый "append()"
+for i in range(len(lst)):
+    lst_2.append(lst[i-2] + lst[i-1] + lst[i])
+
+# # так было в эталонном решении, но мой вариант вроде тоже работает правильно
+# for i in range(len(lst)-1):
+#     lst_2.append(lst[i-1] + lst[i] + lst[i+1])
+# lst_2.append(lst[-2] + lst[-1] + lst[0])  # описываем частный случай, который не попадает в первый "append()"
+
 print(max(lst_2))
 
 # чутка слизал с эталонного решения
