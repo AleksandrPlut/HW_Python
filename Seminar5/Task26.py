@@ -4,12 +4,12 @@
 # A = 3; B = 5 -> 243 (3⁵)
 # A = 2; B = 3 -> 8 
 
-a, b = map(int, input('Введите два числа через пробле: ').split())
+a, b = map(int, input('Введите два числа через пробел: ').split())
 
-def degre(a, b):
+def degree(a, b):
     if b == 0:
         return 1
     elif b == 1:
         return a
-    return a * degre(a, b - 1)
-print(f'{a} в степени {b} =', degre(a, b)) 
+    return a * degree(a, b - 1)
+print(f'{a} в степени {b} =', degree(a, b)) 
