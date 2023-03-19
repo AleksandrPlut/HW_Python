@@ -9,7 +9,7 @@ a, b = map(int, input('Введите два числа через пробел:
 def degree(a, b):
     if b == 0:
         return 1
-    elif b == 1:
-        return a
+    # elif b == 1:   # не требуется
+    #     return a
     return a * degree(a, b - 1)
 print(f'{a} в степени {b} =', degree(a, b)) 
