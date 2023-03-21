@@ -9,6 +9,9 @@ a, b = map(int, input('Введите два числа через пробел:
 def rec_sum(a, b):
     if b == 0:
         return a
+    if a == 0:
+        return b
     return 1 + rec_sum(a, b - 1)
+    # return rec_sum(a + 1, b - 1)  # можно записать таким образом
 
 print(f'Сумма чисел {a} и {b} =', rec_sum(a, b))
