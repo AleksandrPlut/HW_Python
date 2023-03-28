@@ -24,3 +24,4 @@ def print_operation_table(operation, num_rows, num_columns):
         print(*[f"{x:>3}" for x in i])
 
 print_operation_table(lambda x, y: x * y, rows, columns)
+
