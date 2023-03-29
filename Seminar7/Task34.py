@@ -10,22 +10,70 @@
 # **Ввод:** пара-ра-рам рам-пам-папам па-ра-па-да
 # **Вывод:** Парам пам-пам
 
-song = 'пара-ра-рам рам-пам-папам па-ра-па-да'
+# song = 'пара-ра-рам рам-пам-папам па-ра-па-да'
 
 
-def rifm(song):
-    song = song.split()
-    list_1 = []
-    for word in song:
-        sum_vowels = 0
-        for i in word:
-            if i in 'аеёиоуыэюя':
-                sum_vowels += 1
-        list_1.append(sum_vowels)
-    return len(list_1) == list_1.count(list_1[0])
+# def rifm(song):
+#     song = song.split()
+#     list_1 = []
+#     for word in song:
+#         sum_vowels = 0
+#         for i in word:
+#             if i in 'аеёиоуыэюя':
+#                 sum_vowels += 1
+#         list_1.append(sum_vowels)
+#     return len(list_1) == list_1.count(list_1[0])
 
 
-if rifm(song):
-    print('Парам пам-пам')
+# if rifm(song):
+#     print('Парам пам-пам')
+# else:
+#     print('Пам парам')
+
+
+# ------------------------------------------------------------------------------------------------
+# разбор на семинаре
+
+# def rhythm(poems):
+#     separated = poems.lower().split() # переводим все буквы в словах в нижний регистр и делим слова по пробелам
+#     vowels =[]
+#     for word in separated:
+#         same_vowels = len([i for i in word if i in 'аеёиоуыэюя'])
+#         vowels.append(same_vowels)
+#     if len(set(vowels)) == 1:
+#         return 'Ритм есть. Парам пам-пам'
+#     return 'Ритма нет. Пам парам'
+
+# poem = 'пара-ра-рам рам-пам-папам па-ра-па-да'
+# print(rhythm(poem))
+
+# ------------------------------------------------------------------------------------------------
+# еще одно решение с семинара
+
+# vowels_letters = ["а", "е", "ё", "и", "о", "у", "ы", "э", "ю", "я"]
+# text = 'пара-ра-рам рам-пам-папам па-ра-па-да'.lower().split()
+# # print(f'Гласные буквы: {vowels_letters}')   # бесполезная запись
+
+# def rhythm(text, vowels_letters):
+#     count = lambda x: sum(1 for i in x if i in vowels_letters)   # что возвращается в "x" и как это читается дальше НЕПОНИМАЮ!?!?!?!?
+#     tmp = count(text[0])     # что тут происходит для меня тоже загадка
+#     if all([count(i) == tmp for i in text]):   # функция "all" возвращает "Trye" если все элементы списка "Trye", все что я понял,
+#                                                # остальная запись - дремучий лес 
+#         return 'Ритм есть. Парам пам-пам'
+#     return 'Ритма нет. Пам парам'
+
+# print(rhythm(text, vowels_letters))
+
+# ------------------------------------------------------------------------------------------------
+# еще одно решение с семинара (самое короткое)
+
+def rifma(words):
+    return len(set(map( lambda x: sum(1 for i in x if i in 'аеёиоуыэюя'), words))) == 1  # ну тут вообще коментировать не буду,
+                                                                                         # цензурных эпитетов нет
+
+# chant = str(input('Слова песни: ')).lower().split() # для ручного ввода, ниже вариант для ленивых # зачем тут "set" - не до пёр
+chant = 'пара-ра-рам рам-пам-папам па-ра-па-да'.lower().split()
+if rifma(chant):
+    print('Ритм есть. Парам пам-пам')
 else:
-    print('Пам парам')
+    print('Ритма нет. Пам парам')
